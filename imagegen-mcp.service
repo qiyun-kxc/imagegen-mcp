@@ -1,0 +1,15 @@
+[Unit]
+Description=ImageGen MCP Server (Streamable HTTP)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/imagegen-mcp
+EnvironmentFile=/home/ubuntu/imagegen-mcp/secrets.env
+ExecStart=/home/ubuntu/imagegen-mcp/imagegen-mcp
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
